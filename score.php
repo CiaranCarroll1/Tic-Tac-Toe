@@ -25,7 +25,18 @@
 				success: function (result) {
 					if(result != "ERROR-NOGAMES")
 					{
-						updateScores(result);
+						if(result == "ERROR-DB")
+					{
+						alert(result);
+					}
+					else if(result == "ERROR-NOGAMES")
+					{
+						//Do nothing.
+					}
+					else
+					{
+						updateScores(result);			//Update scores.
+					}
 					}
 				}
 			});
@@ -48,7 +59,7 @@
 				loss = 0;
 				draw = 0;
 				
-				for(y=0;y<games.length;y++)
+				for(y=0;y<games.length;y++)				//Check every game for win/loss/draw for current user and create table with results.
 				{
 					var p1 = games[y]["p1"];
 					var p2 = games[y]["p2"];

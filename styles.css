@@ -160,6 +160,7 @@ body {
     min-width: 12em;
     max-width: 15em;
     height: 12em;
+	text-align: center;
 }
 
 .gridbox:hover {

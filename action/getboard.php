@@ -1,9 +1,7 @@
 <?php
 	session_start();
 	
-	$wsdl = "http://localhost:8080/TTTWebApplication/TTTWebService?WSDL";
-	$trace = true;
-	$exceptions = true;
+	include "wsdl.php";
 	
 	if(isset($_SESSION["gid"])) {
 		$gid = $_SESSION["gid"];

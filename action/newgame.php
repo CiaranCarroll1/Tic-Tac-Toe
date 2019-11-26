@@ -3,9 +3,7 @@
 	
 	if(isset($_SESSION["uid"])) {
 		
-		$wsdl = "http://localhost:8080/TTTWebApplication/TTTWebService?WSDL";
-		$trace = true;
-		$exceptions = true;
+		include "wsdl.php";
 	
 		try {
 			$proxy = new SoapClient($wsdl, array('trace' => $trace, 'exceptions' => $exceptions));

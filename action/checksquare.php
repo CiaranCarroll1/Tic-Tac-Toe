@@ -8,9 +8,7 @@
 	{
 		$gid = $_SESSION["gid"];
 		
-		$wsdl = "http://localhost:8080/TTTWebApplication/TTTWebService?WSDL";
-		$trace = true;
-		$exceptions = true;
+		include "wsdl.php";
 	
 		try {
 			$proxy = new SoapClient($wsdl, array('trace' => $trace, 'exceptions' => $exceptions));
@@ -18,21 +16,9 @@
 			$xml_array['x'] = $x;
 			$xml_array['y'] = $y;
 			$xml_array['gid'] = $gid;
-			$response = $proxy->checkSquare($xml_array);
+			$response = $proxy->checkSquare($xml_array); //Check status of square.
 			$val = (string) $response->return;
-			
-			switch($val)
-			{
-				case 'ERROR-DB':
-					$val = "error";
-					break;
-				case 0:
-					$val = "0";
-					break;
-				case 1:
-					$val = "1";
-			}
-			echo $val;
+			echo $val; //Return result.
 
 		} catch (Exception $e) {
 			echo $e->getMessage();

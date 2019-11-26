@@ -3,9 +3,7 @@
 	
 	$gid = $_POST["gid"];
 	
-	$wsdl = "http://localhost:8080/TTTWebApplication/TTTWebService?WSDL";
-	$trace = true;
-	$exceptions = true;
+	include "wsdl.php";
 	
 	if(isset($_SESSION["uid"])) {
 		$uid = $_SESSION["uid"];

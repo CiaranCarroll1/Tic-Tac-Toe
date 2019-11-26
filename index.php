@@ -13,7 +13,7 @@
 			
 			$.ajaxSetup({ cache: false });
 			
-			$("#login").click( function() {
+			$("#login").click( function() {			//Login button clicked, show Login form div.
 				if(!login) {
 					if(register) {
 						$("#registerFrmDiv").removeClass("showDiv").addClass("hideDiv");
@@ -30,7 +30,7 @@
 				}
 			}); 
 			
-			$("#register").click( function() {
+			$("#register").click( function() {		//Register button clicked, show register form div.
 				if(!register) {
 					if(login) {
 						$("#loginFrmDiv").removeClass("showDiv").addClass("hideDiv");
@@ -47,13 +47,13 @@
 				}
 			});
 			
-			$("#loginSub").click(function() {
+			$("#loginSub").click(function() {		//Submit login details.
 				un = $("#loginFrm #uname").val();
 				pw = $("#loginFrm #pword").val();
 				
 				$.ajax({
 					method: "POST",
-					url: "action/login.php",
+					url: "action/login.php",		//Check if valid login details.
 					data: {uname: un, pword: pw},
 					cache: false,
 					success: function (result) {
@@ -64,13 +64,13 @@
 							alert("Incorrect username and/or password.\nPlease re-enter your details or register an account.");
 						}
 						if(result > 0) {
-							moveToSecure(result, un);
+							moveToSecure(result, un);	//Move to main menu.
 						}
 					}
 				});
 			});
 			
-			$("#registerSub").click(function() {
+			$("#registerSub").click(function() {	//Submit register details clicked.
 				un = $("#registerFrm #uname").val();
 				pw = $("#registerFrm #pword").val();
 				pw2 = $("#registerFrm #pword2").val();
@@ -80,7 +80,7 @@
 				if(checkFields()) {
 					$.ajax({
 					method: "POST",
-					url: "action/register.php",
+					url: "action/register.php",		//Attempt to register details.
 					data: {username: un, password: pw, name: fn, surname: sn},
 					cache: false,
 					success: function (result) {
@@ -98,7 +98,7 @@
 				}
 			});
 			
-			function checkFields() {
+			function checkFields() {				//Check if register details are ok.
 				un = $("#registerFrm #uname").val();
 				pw = $("#registerFrm #pword").val();
 				pw2 = $("#registerFrm #pword2").val();
@@ -157,7 +157,7 @@
 				return flag;
 			}
 			
-			function moveToSecure(uid, un) {
+			function moveToSecure(uid, un) {			//Move to Main menu.
 				$.ajax({
 					method: "POST",
 					url: "action/initialise.php",

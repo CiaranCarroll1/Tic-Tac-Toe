@@ -1,11 +1,11 @@
 <?php
 	session_start();
 	
-	if(!isset($_SESSION["uid"]) || !isset($_SESSION["username"])) {
+	if(!isset($_SESSION["uid"]) || !isset($_SESSION["username"])) {		//Check that uid and username session varaibles are set.
 		header("location:index.php?err=1");
 	}
 	
-	if(isset($_SESSION["gid"])){
+	if(isset($_SESSION["gid"])){										//Unset gid variable if set.
 		unset($_SESSION["gid"]);
 	}
 ?>
@@ -17,21 +17,21 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" media="all" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
-	var un = '<?php echo $_SESSION["username"]; ?>';
+	var un = '<?php echo $_SESSION["username"]; ?>';					//Get username session variable.
 	
 		$(document).ready( function() {
 			
 			$.ajaxSetup({ cache: false });
 			
-			$("#myscore").click( function() {
+			$("#myscore").click( function() {							//Go to my score screen.
 				window.location.replace("score.php");
 			}); 
 			
-			$("#leaderboard").click( function() {
+			$("#leaderboard").click( function() {						//Go to leaderboard.
 				window.location.replace("leaderboard.php");
 			});
 			
-			$("#newgame").click(function() {
+			$("#newgame").click(function() {							//Start new game.
 				
 				$.ajax({
 					method: "POST",
@@ -44,7 +44,7 @@
 				});
 			});
 			
-			$(document).on("click", ".joinbutton", function(){
+			$(document).on("click", ".joinbutton", function(){			//Join already open game.
 				if($(this).hasClass("joinbutton")) {
 					var gid = event.target.id;
 					
@@ -61,7 +61,7 @@
 				}
 			}); 
 			
-			$(document).on("click", ".rejoinbutton", function(){
+			$(document).on("click", ".rejoinbutton", function(){		//Re-join game you created which has not been joined yet.
 				if($(this).hasClass("rejoinbutton")) {
 					var gid = event.target.id;
 					
@@ -78,25 +78,33 @@
 			}); 
 			
 			updateOpenGames();
-			var openGamesTimer = window.setInterval(updateOpenGames, 1000);
+			var openGamesTimer = window.setInterval(updateOpenGames, 1000);		//Update open games table every second.
 			function updateOpenGames()
 			{
 				$.ajax({
 					method: "POST",
-					url: "action/showopengames.php",
+					url: "action/showopengames.php",							//Get open games.
 					cache: false,
 					success: function (result) {
-						if(result != "ERROR-NOGAMES")
+						if (result == "ERROR-DB")
+						{
+							alert(result);
+						}
+						else if(result == "ERROR-NOGAMES")
+						{
+							//Do nothing.
+						}
+						else
 						{
 							var games = [];
 							var gamesSplit = result.split("\n");
 							
 							$.each(gamesSplit, function(index, value) {
 								var game = value.split(",");
-								games.push({gid: game[0], user: game[1], date: game[2]});
+								games.push({gid: game[0], user: game[1], date: game[2]});		//Get array of games with keys for gid, user and date.
 							});
 							
-							if(games.length > 0)
+							if(games.length > 0)												//Update Open games table with open games.
 							{
 								$("#opengames > tbody").empty();
 								

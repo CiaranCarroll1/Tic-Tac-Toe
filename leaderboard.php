@@ -18,14 +18,22 @@
 		
 		$(document).ready( function() {
 			
-			$.ajax({
+			$.ajax({			//Get all games.
 				method: "POST",
 				url: "action/getleaderboard.php",
 				cache: false,
 				success: function (result) {
-					if(result != "ERROR-NOGAMES")
+					if(result == "ERROR-DB")
 					{
-						updateLeaderboard(result);
+						alert(result);
+					}
+					else if(result == "ERROR-NOGAMES")
+					{
+						//Do nothing.
+					}
+					else
+					{
+						updateLeaderboard(result);			//Update leaderboard if games found.
 					}
 				}
 			});
@@ -39,12 +47,12 @@
 				var games = [];
 				var gamesSplit = result.split("\n");
 				
-				$.each(gamesSplit, function(index, value) {
+				$.each(gamesSplit, function(index, value) {			//Create array of games with keys.
 					var game = value.split(",");
 					games.push({p1: game[1], p2: game[2], res: game[3]});
 				});
 				
-				for(i=0; i<games.length;i++)
+				for(i=0; i<games.length;i++)						//Get array of players.
 				{
 					if(!players.includes(games[i]["p1"]))
 					{
@@ -57,7 +65,7 @@
 					}
 				}
 				
-				for(x=0;x<players.length;x++)
+				for(x=0;x<players.length;x++)						//Get wins, losses and draws for each player and update league table.
 				{
 					
 					win = 0;
