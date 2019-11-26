@@ -124,6 +124,9 @@
 							gameOver = true;
 							$("#status").html("Status: Over!");
 						}
+						else if(result == "ERROR-NOGAME") {
+							//Do nothing
+						}
 						else {
 							alert(result);
 						}
@@ -232,6 +235,28 @@
 					}
 				});
 			}
+			
+			$("#delete").click(function() {							//Exit game and delete it.
+				if(confirm("Warning, game will be deleted!\nContinue anyway? (y/n)")) {
+					$.ajax({
+						method: "POST",
+						url: "action/deletegame.php",
+						cache: false,
+						success: function (result) {
+							if(result == "ERROR-GAMESTARTED") {
+								alert("Unable to delete game!\n(Not your game/Already started)");
+							}
+							else if(result == "ERROR-DB") {
+								alert(result);
+							}
+							else {
+								alert("Game Deleted!");
+								window.location.replace("main.php");
+							}
+						}
+					});
+				}
+			});
 
 		}); 
 	</script>
@@ -246,6 +271,7 @@
 		<ul>
 			<li><a href="main.php">Home</a></li>
 			<li><a href="logout.php">Logout</a></li>
+			<li><button id="delete">Delete Game</button></li>
 		</ul>
 	</div>
 	<div class="content">

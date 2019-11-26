@@ -177,12 +177,6 @@ img {
 	margin: 0 auto;
 }
 
-/*
-#services td:nth-child(2) {
-	padding-right: 100px;
-	padding-left: 100px;
-}*/
-
 #services td button {
 	width:400px;
 	height:30px;
@@ -190,6 +184,16 @@ img {
 	text-align:center;
 	cursor:pointer;
 }
+
+#delete {
+	width: 200px;
+	height: 25px;
+	display:block;
+	font-size:0.9em;
+	text-align: left;
+	cursor:pointer;
+}
+	
 
 #opengames {
 	width: 500px;
@@ -201,6 +205,19 @@ img {
 }
 
 #opengames table, #opengames th, #opengames td {
+  border: 1px solid black;
+}
+
+#myopengames {
+	width: 500px;
+	margin: 0 auto;
+}
+
+#myopengames th{
+	font-weight: bold;
+}
+
+#myopengames table, #myopengames th, #myopengames td {
   border: 1px solid black;
 }
 

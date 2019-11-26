@@ -107,6 +107,7 @@
 							if(games.length > 0)												//Update Open games table with open games.
 							{
 								$("#opengames > tbody").empty();
+								$("#myopengames > tbody").empty();
 								
 								for(i=0; i<games.length;i++)
 								{
@@ -118,8 +119,8 @@
 									}
 									else
 									{
-										var $newRow = $("<tr><td><div>" + games[i]["gid"] + "</div></td><td><div>" + games[i]["user"] + "</div></td><td><div>" + games[i]["date"] + "</div></td><td><div><button id='" + games[i]["gid"] + "' class='rejoinbutton'>Re-join</button></div></td></tr>");
-										$("#opengames > tbody").append($newRow);
+										var $newRow = $("<tr><td><div>" + games[i]["gid"] + "</div></td><td><div>" + games[i]["date"] + "</div></td><td><div><button id='" + games[i]["gid"] + "' class='rejoinbutton'>Re-join</button></div></td></tr>");
+										$("#myopengames > tbody").append($newRow);
 									}
 								}
 							}
@@ -147,13 +148,17 @@
 		<h3>Welcome - Home</h3>
 			<tr>
 				<td><button id="myscore">My Score</button></td>
+			<tr>
+			</tr>
 				<td><button id="leaderboard">Leaderboard</button></td>
+			<tr>
+			</tr>
 				<td><button id="newgame">New Game</button></td>
 			</tr>
 		</table>
 		<table id="opengames">
 		<thead>
-		<h3>Open Games</h3>
+		<h3>Other Open Games</h3>
 		<tr>
 			<th><div>Game id:</div></th>
 			<th><div>User:</div></th>
@@ -163,6 +168,19 @@
 		<thead>
 		<tbody>
 		</tbody>
+		</table>
+		<table id="myopengames">
+		<thead>
+		<h3>My Open Games</h3>
+		<tr>
+			<th><div>Game id:</div></th>
+			<th><div>Started:</div></th>
+			<th><div>Join Game:</div></th>
+		</tr>
+		<thead>
+		<tbody>
+		</tbody>
+		</table>
 	</div>
 </div>
 </body>
