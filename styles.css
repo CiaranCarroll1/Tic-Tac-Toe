@@ -1,0 +1,205 @@
+body {
+	margin:0px;
+	padding:0px;
+	font-size:0.9em;
+	font-family:'Lato', trebuchet ms, tahoma, arial, sans-serif;
+	color:black;
+	text-align:center;
+	background-size:cover;
+}
+
+#container {
+	width:1000px;
+	margin:auto;
+	text-align:left;
+}
+
+.opaque {
+	opacity:0.9;
+}
+
+#header {
+	width:1000px;
+	text-align:center;
+	background-color:rgb(239,239,239);
+	border-bottom:1px black dotted;
+}
+
+#header h1, #header h2 {
+	margin-left:20px;
+}
+
+#header h1 {
+	padding-top:10px;
+}
+
+#header h2 {
+	margin-top:-5px;
+	color:#8f8f8f;
+	font-size:0.9em;
+}
+
+#menu {
+	width:200px;
+	min-height:400px;
+	background-color:white;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+
+#menu ul {
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	float:left;
+}
+
+#menu ul li {
+	width:200px;
+	height:25px;
+	margin:0px;
+	padding:0px;
+	border-bottom:1px dotted black;
+}
+
+#menu ul li a {
+	text-decoration:none;
+	margin:0px;
+	padding:0px;
+	padding-left:10px;
+	height:25px;
+	display:block;
+	font-size:0.9em;
+}
+
+#menu ul li a:hover {
+	background-color:gold;
+}
+
+#content {
+	width:799px;
+	min-height:200px;
+	#width:800px;
+	float:;
+	background-color:rgb(255,255,255);
+}
+
+
+#footer {
+	width:1000px;
+	height:100px;
+	text-align:right;
+	background-color:rgb(239,239,239);
+	border-top:1px black dotted;
+}
+
+#footer p {
+	text-align:center;
+	padding:20px;
+}
+
+.clear {
+	clear:both;
+}
+
+#options td button {
+	width:100px;
+	height:30px;
+	font-size:0.9em;
+	text-align:center;
+	cursor:pointer;
+}
+
+#options td button:hover {
+	color:darkgreen;
+}
+
+
+#opengames table {
+	width: 100%;
+}
+
+#results table {
+	width: 100%;
+}
+
+.hideDiv {
+	display:none;
+}
+
+.showDiv {
+	display:block;
+}
+
+.showDiv table {
+	margin:auto;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        ". game-grid ."
+        ". game-info .";
+}
+
+#grid {
+    grid-area: game-grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.gridbox {
+	border-style: solid;
+	border-color: black;
+    background-color: white;
+    display: block;
+    width: 100%;
+    min-width: 12em;
+    max-width: 15em;
+    height: 12em;
+}
+
+.gridbox:hover {
+    cursor: pointer;
+}
+
+img {
+    object-fit: cover;
+}
+
+#services td button {
+	width:100px;
+	height:30px;
+	font-size:0.9em;
+	text-align:center;
+	cursor:pointer;
+}
+
+#opengames {
+	width: 500px;
+}
+
+#opengames th{
+	font-weight: bold;
+}
+
+#opengames table, #opengames th, #opengames td {
+  border: 1px solid black;
+}
+
+#results table, #results th, #results td {
+  border: 1px solid black;
+}
+
+#results {
+	width: 500px;
+}
+
+#results th{
+	font-weight: bold;
+}
+
+
