@@ -4,6 +4,7 @@ body {
 	font-size:0.9em;
 	font-family:'Lato', trebuchet ms, tahoma, arial, sans-serif;
 	color:black;
+	background-color: white;
 	text-align:center;
 	background-size:cover;
 }
@@ -42,7 +43,6 @@ body {
 #menu {
 	width:200px;
 	min-height:400px;
-	background-color:white;
 	float:left;
 	margin:0px;
 	padding:0px;
@@ -53,6 +53,7 @@ body {
 	margin:0px;
 	padding:0px;
 	float:left;
+	border-right: 1px dotted black;
 }
 
 #menu ul li {
@@ -78,11 +79,12 @@ body {
 }
 
 #content {
-	width:799px;
+	width:1000px;
 	min-height:200px;
 	#width:800px;
 	float:;
-	background-color:rgb(255,255,255);
+	text-align: center;
+	align: center;
 }
 
 
@@ -171,8 +173,18 @@ img {
     object-fit: cover;
 }
 
+#services {
+	margin: 0 auto;
+}
+
+/*
+#services td:nth-child(2) {
+	padding-right: 100px;
+	padding-left: 100px;
+}*/
+
 #services td button {
-	width:100px;
+	width:400px;
 	height:30px;
 	font-size:0.9em;
 	text-align:center;
@@ -181,6 +193,7 @@ img {
 
 #opengames {
 	width: 500px;
+	margin: 0 auto;
 }
 
 #opengames th{
@@ -197,6 +210,7 @@ img {
 
 #results {
 	width: 500px;
+	text-align:center;
 }
 
 #results th{
