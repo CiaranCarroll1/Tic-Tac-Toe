@@ -158,7 +158,7 @@
 		</table>
 		<table id="opengames">
 		<thead>
-		<h3>Other Open Games</h3>
+		<h3>Open Games</h3>
 		<tr>
 			<th><div>Game id:</div></th>
 			<th><div>User:</div></th>

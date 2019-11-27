@@ -116,7 +116,7 @@
 	</div>
 	<div class="content">
 		<table id="results">
-			<h2>My results</h2>
+			<h2>Leaderboard</h2>
 		<thead>
 			<tr>
 				<th><div>User:</div></th>
