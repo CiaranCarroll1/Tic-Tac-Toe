@@ -1,3 +1,3 @@
 # Tic-Tac-Toe
 
-PHP Client for Tic-Tac-Tow web service.
+PHP Client for Tic-Tac-Toe web service.
