@@ -1,3 +1,3 @@
 # Tic-Tac-Toe
 
-PHP Client for Tic-Tac-Toe web service.
+PHP driven website for playing Tic-Tac-Toe via SOAP web service.
